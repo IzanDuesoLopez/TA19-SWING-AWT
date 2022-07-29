@@ -30,8 +30,8 @@ public class miniencuesta_gráfica extends JFrame {
 				try {
 					// Invocamos la instancia del frame
 					miniencuesta_gráfica frame = new miniencuesta_gráfica();
-					frame.setVisible(true);
-				} catch (Exception e) {
+					frame.setVisible(true); // Hacemos visible el frame
+				} catch (Exception e) { // En el caso de que haya algun tipo de problema ejecutando el frame principal
 					e.printStackTrace();
 				}
 			}
@@ -40,14 +40,14 @@ public class miniencuesta_gráfica extends JFrame {
 	
 	// Método con toda la funcionalidas principal
 	public miniencuesta_gráfica() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definimos que al darle a la cruz se cerrara el programa
 		setBounds(100, 100, 450, 361);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Elije un sistema operativo:");
+		JLabel lblNewLabel = new JLabel("Elije un sistema operativo:"); // Label con la selección del sistema operativo
 		lblNewLabel.setBounds(10, 11, 270, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -70,7 +70,7 @@ public class miniencuesta_gráfica extends JFrame {
 		bgroup.add(rdbtnNewRadioButton_1);
 		bgroup.add(rdbtnNewRadioButton_2);
 		
-		JLabel lblNewLabel_1 = new JLabel("Elije tu especialidad/es:");
+		JLabel lblNewLabel_1 = new JLabel("Elije tu especialidad/es:"); // Label con la especialidad
 		lblNewLabel_1.setBounds(10, 114, 137, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -151,11 +151,11 @@ public class miniencuesta_gráfica extends JFrame {
 				JOptionPane.showMessageDialog(btnNewButton, botonSeleccionado + "\n" + botonesSeleccionadosAptitudes + "\n" + "Horas dedicadas en el PC: \n" + " > " + slider.getValue());
 			}
 		});
-		btnNewButton.setFont(new Font("Unispace", Font.BOLD, 14));
+		btnNewButton.setFont(new Font("Unispace", Font.BOLD, 14)); // Definimos la fuente del boton
 		btnNewButton.setBounds(283, 135, 123, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_2 = new JLabel("Horas dedicadas: ");
+		JLabel lblNewLabel_2 = new JLabel("Horas dedicadas: "); // Label con las horas dedicadas
 		lblNewLabel_2.setBounds(10, 217, 170, 14);
 		contentPane.add(lblNewLabel_2);
 	}

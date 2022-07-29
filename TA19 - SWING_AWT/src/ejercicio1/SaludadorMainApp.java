@@ -4,7 +4,7 @@ public class SaludadorMainApp {
 
 	public static void main(String[] args) {
 
-
+		Saludador saludos = new Saludador();
 
 	}
 

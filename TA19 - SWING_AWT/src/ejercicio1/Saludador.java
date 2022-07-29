@@ -2,6 +2,7 @@ package ejercicio1;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.*;
 
 public class Saludador extends JFrame{
 	
@@ -17,7 +18,11 @@ public class Saludador extends JFrame{
 		contentPane = new JPanel(); // Creamos el panel principal
 		contentPane.setLayout(null); // Indicamos su diseño
 		
+		setContentPane(contentPane); // Asignamos el panel a la ventana
 		
+		JLabel etiqueta = new JLabel("Saluditos");
+		etiqueta.setBounds(60, 20, 100, 200);
+		contentPane.add(etiqueta);
 	}
 	
 }

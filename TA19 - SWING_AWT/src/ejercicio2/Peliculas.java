@@ -47,7 +47,7 @@ public class Peliculas extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Escribe el título de una película");
-		lblNewLabel.setBounds(31, 75, 154, 31);
+		lblNewLabel.setBounds(31, 75, 292, 31);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();  //Creación de cuadro de texto

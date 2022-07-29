@@ -1,7 +1,7 @@
 package ejercicio1;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.awt.TextField;
+
 import javax.swing.*;
 
 public class Saludador extends JFrame{
@@ -23,6 +23,10 @@ public class Saludador extends JFrame{
 		JLabel etiqueta = new JLabel("Saluditos");
 		etiqueta.setBounds(60, 20, 100, 200);
 		contentPane.add(etiqueta);
+		
+		JTextField textField = new JTextField();
+		textField.setBounds(50,150,90,30);
+		contentPane.add(textField);
 	}
 	
 }

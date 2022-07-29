@@ -9,11 +9,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MiniCalculadora extends JFrame {
 
@@ -21,6 +25,8 @@ public class MiniCalculadora extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private ArrayList<String> operaciones = new ArrayList<>(Arrays.asList("", "", "", ""));
+	private boolean mostrar_operaciones = false;
 
 	/**
 	 * Launch the application.
@@ -81,6 +87,8 @@ public class MiniCalculadora extends JFrame {
 				float result = first_value + second_value;
 				
 				textField_2.setText("" + result);
+				
+				operaciones.add(0, textField.getText() + " + " + textField_1.getText() + " = " + result);
 			}
 		});
 		btnNewButton.setBounds(108, 203, 85, 35);
@@ -99,6 +107,8 @@ public class MiniCalculadora extends JFrame {
 				float result = first_value - second_value;
 				
 				textField_2.setText("" + result);
+				
+				operaciones.add(0, textField.getText() + " - " + textField_1.getText() + " = " + result);
 			}
 		});
 		btnNewButton_1.setBounds(279, 203, 85, 35);
@@ -117,6 +127,8 @@ public class MiniCalculadora extends JFrame {
 				float result = first_value * second_value;
 				
 				textField_2.setText("" + result);
+				
+				operaciones.add(0, textField.getText() + " x " + textField_1.getText() + " = " + result);
 			}
 		});
 		btnNewButton_2.setBounds(108, 263, 85, 35);
@@ -135,6 +147,8 @@ public class MiniCalculadora extends JFrame {
 				float result = first_value / second_value;
 				
 				textField_2.setText("" + result);
+				
+				operaciones.add(0, textField.getText() + " / " + textField_1.getText() + " = " + result);
 			}
 		});
 		btnNewButton_3.setBounds(279, 263, 85, 35);
@@ -145,12 +159,48 @@ public class MiniCalculadora extends JFrame {
 		lblNewLabel.setBounds(411, 111, 45, 13);
 		contentPane.add(lblNewLabel);
 		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setVisible(false);
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setBounds(523, 274, 76, 13);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setVisible(false);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setBounds(516, 302, 83, 13);
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setVisible(false);
+		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_6.setBounds(523, 330, 79, 13);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setVisible(false);
+		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7.setBounds(523, 353, 76, 13);
+		contentPane.add(lblNewLabel_7);
+		
 		JButton btnNewButton_4 = new JButton("About");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				mostrar_operaciones = !mostrar_operaciones;
+				
+				lblNewLabel_4.setText(operaciones.get(0));
+				lblNewLabel_5.setText(operaciones.get(1));
+				lblNewLabel_6.setText(operaciones.get(2));
+				lblNewLabel_7.setText(operaciones.get(3));
+				
+				lblNewLabel_4.setVisible(mostrar_operaciones);
+				lblNewLabel_5.setVisible(mostrar_operaciones);
+				lblNewLabel_6.setVisible(mostrar_operaciones);
+				lblNewLabel_7.setVisible(mostrar_operaciones);
+				
 			}
 		});
-		btnNewButton_4.setBounds(499, 241, 85, 21);
+		btnNewButton_4.setBounds(516, 210, 85, 21);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblNewLabel_1 = new JLabel("Valor 1");
@@ -164,7 +214,7 @@ public class MiniCalculadora extends JFrame {
 		
 		JLabel lblNewLabel_3 = new JLabel("Resultado");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(516, 77, 45, 13);
+		lblNewLabel_3.setBounds(495, 77, 85, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		JButton btnNewButton_5 = new JButton("Clear");
@@ -178,5 +228,7 @@ public class MiniCalculadora extends JFrame {
 		});
 		btnNewButton_5.setBounds(196, 342, 85, 35);
 		contentPane.add(btnNewButton_5);
+		
+		
 	}
 }

@@ -1,6 +1,5 @@
 package ejercicio4;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,7 +8,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,6 +17,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@SuppressWarnings("serial")
 public class MiniCalculadora extends JFrame {
 
 	private JPanel contentPane;
@@ -76,6 +75,14 @@ public class MiniCalculadora extends JFrame {
 		
 		JButton btnNewButton = new JButton("+");
 		btnNewButton.addMouseListener(new MouseAdapter() {
+			/**
+			 * Recoge los valores de los dos campos de texto, estos se parsean a tipo float,
+			 * se ejecuta la operación correspondiente entre los dos valores, 
+			 * se pasa el valor resultante al último campo de texto 
+			 * y se añade este valor a la primera posición de la arraylist encargada de almacenar las últimas operaciones realizadas
+			 * 
+			 * @param e acción de un ratón que ocurre en el componente
+			 */
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				String first_field = textField.getText();
@@ -96,6 +103,14 @@ public class MiniCalculadora extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("-");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			/**
+			 * Recoge los valores de los dos campos de texto, estos se parsean a tipo float,
+			 * se ejecuta la operación correspondiente entre los dos valores, 
+			 * se pasa el valor resultante al último campo de texto 
+			 * y se añade este valor a la primera posición de la arraylist encargada de almacenar las últimas operaciones realizadas
+			 * 
+			 * @param e acción de un ratón que ocurre en el componente
+			 */
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				String first_field = textField.getText();
@@ -116,6 +131,14 @@ public class MiniCalculadora extends JFrame {
 		
 		JButton btnNewButton_2 = new JButton("x");
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			/**
+			 * Recoge los valores de los dos campos de texto, estos se parsean a tipo float,
+			 * se ejecuta la operación correspondiente entre los dos valores, 
+			 * se pasa el valor resultante al último campo de texto 
+			 * y se añade este valor a la primera posición de la arraylist encargada de almacenar las últimas operaciones realizadas
+			 * 
+			 * @param e acción de un ratón que ocurre en el componente
+			 */
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				String first_field = textField.getText();
@@ -136,6 +159,14 @@ public class MiniCalculadora extends JFrame {
 		
 		JButton btnNewButton_3 = new JButton("/");
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			/**
+			 * Recoge los valores de los dos campos de texto, estos se parsean a tipo float,
+			 * se ejecuta la operación correspondiente entre los dos valores, 
+			 * se pasa el valor resultante al último campo de texto 
+			 * y se añade este valor a la primera posición de la arraylist encargada de almacenar las últimas operaciones realizadas
+			 * 
+			 * @param e acción de un ratón que ocurre en el componente
+			 */
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				String first_field = textField.getText();
@@ -185,6 +216,12 @@ public class MiniCalculadora extends JFrame {
 		
 		JButton btnNewButton_4 = new JButton("About");
 		btnNewButton_4.addActionListener(new ActionListener() {
+			/**
+			 * Pasa los cuatro primeros valores de la arraylist de las últimas operaciones realizadas a los etiquetas de texto
+			 * y cambia el estado de estas etiquetas de visible a invisible o viceversa
+			 * 
+			 * @param e acción ocurrida en un componente
+			 */
 			public void actionPerformed(ActionEvent e) {
 				mostrar_operaciones = !mostrar_operaciones;
 				
@@ -219,6 +256,11 @@ public class MiniCalculadora extends JFrame {
 		
 		JButton btnNewButton_5 = new JButton("Clear");
 		btnNewButton_5.addMouseListener(new MouseAdapter() {
+			/**
+			 * Vacía los valores de los tres campos de texto
+			 * 
+			 * @param e acción de un ratón que ocurre en el componente
+			 */
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				textField.setText(null);
